@@ -27,3 +27,24 @@ Route::prefix('prodi')->group(function(){
         return "Teknik Informatika";
     });
 });
+
+Route::get('/news/{id}', [NewsController::class,'news']);
+
+Route::prefix('sarana')->group(function(){
+    Route::get('/perkantoran',function(){
+        return "Perkantoran";
+    });
+    Route::get('/labotarium',function(){
+        return "Labotarium";
+    });
+    Route::get('/kelas',function(){
+        return "Kelas";
+    });
+    Route::get('/lainnya',function(){
+        return "Lainnya";
+    });
+});
+
+Route::get('/about', [AboutController::class.'about']);
+
+Route::get('/comment/{nama}/pesan/{pesan}', [CommentController::class.'comment']);
