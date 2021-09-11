@@ -31,7 +31,7 @@ Route::prefix('prodi')->group(function(){
     });
 });
 
-Route::get('/news/{id}', [NewsController::class,'news']);
+Route::get('/berita/{id}', [NewsController::class,'news']);
 
 Route::prefix('sarana')->group(function(){
     Route::get('/kantor',function(){
