@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class.'index']);
+Route::prefix('prodi')->group(function(){
+    Route::get('/manajemen-informatika',function(){
+        return "Manajemen Informatika";
+    });
+    Route::get('/teknik-informatika',function(){
+        return "Teknik Informatika";
+    });
+});
