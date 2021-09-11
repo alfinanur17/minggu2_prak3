@@ -23,10 +23,10 @@ Route::get('/', function () {
 
 Route::get('/', [HomeController::class.'index']);
 Route::prefix('prodi')->group(function(){
-    Route::get('/manajemen-informatika',function(){
+    Route::get('/Manajemen_Informatika',function(){
         return "Manajemen Informatika";
     });
-    Route::get('/teknik-informatika',function(){
+    Route::get('/Teknik_Informatika',function(){
         return "Teknik Informatika";
     });
 });
@@ -34,7 +34,7 @@ Route::prefix('prodi')->group(function(){
 Route::get('/news/{id}', [NewsController::class,'news']);
 
 Route::prefix('sarana')->group(function(){
-    Route::get('/perkantoran',function(){
+    Route::get('/kantor',function(){
         return "Perkantoran";
     });
     Route::get('/labotarium',function(){
