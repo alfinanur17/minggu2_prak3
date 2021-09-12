@@ -17,9 +17,7 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/', [HomeController::class.'index']);
 Route::prefix('prodi')->group(function(){
