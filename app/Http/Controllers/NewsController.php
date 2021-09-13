@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function comment($nama,$pesan) {
-        return "nama : $nama <br> pesan: $pesan";
+    public function news() {
+        return "berada pada berita";
     }
 }
