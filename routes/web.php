@@ -25,6 +25,8 @@ Route::get('/home', function(){
     return view('home');
 });
 
+Route::get('/home', [HomeController::class, 'home']);
+
 Route::get('/', [HomeController::class.'index']);
 Route::prefix('prodi')->group(function(){
     Route::get('/Manajemen_Informatika',function(){
