@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
+    public function home() {
         return "Selamat Datang di Website Politenik Negeri Malang";
     }
+
 }
