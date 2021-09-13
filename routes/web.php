@@ -17,7 +17,13 @@ use App\Http\Controllers\NewsController;
 |
 */
 
+Route::get('/', function (){
+    return view('welcome');
+});
 
+Route::get('/home', function(){
+    return view('home');
+});
 
 Route::get('/', [HomeController::class.'index']);
 Route::prefix('prodi')->group(function(){
