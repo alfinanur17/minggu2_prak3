@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SaranaController;
+use App\Http\Controllers\ProdiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,35 +28,23 @@ Route::get('/home', function(){
     return view('home');
 });
 
-Route::get('/homee', [HomeController::class, 'home']);
+Route::get('/home', [HomeController::class, 'home']);
 
 Route::get('/', [HomeController::class.'index']);
-Route::prefix('prodi')->group(function(){
-    Route::get('/Manajemen_Informatika',function(){
-        return "Manajemen Informatika";
-    });
-    Route::get('/Teknik_Informatika',function(){
-        return "Teknik Informatika";
-    });
+Route::prefix('prodi')->group(function () {
+    Route::get('/Manajemen_Informatika', [ProdiController::class,'mi']);
+    Route::get('/Teknik_Informatika', [ProdiController::class,'ti']);
 });
-
-Route::get('/berita/{id}', [NewsController::class,'news']);
+Route::get('/news/{id}', [NewsController::class,'news']);
 
 Route::prefix('sarana')->group(function(){
-    Route::get('/kantor',function(){
-        return "Perkantoran";
+    Route::get('/kelas', [SaranaController::class,'kelas']);
+    Route::get('/laboratorium', [SaranaController::class,'laboratorium']);
+    Route::get('/lainnya', [SaranaController::class,'lainnya']);
+    Route::get('/perkantoran', [SaranaController::class,'perkantoran']);
     });
-    Route::get('/labotarium',function(){
-        return "Labotarium";
-    });
-    Route::get('/kelas',function(){
-        return "Kelas";
-    });
-    Route::get('/lainnya',function(){
-        return "Lainnya";
-    });
-});
+    
 
 Route::get('/about', [AboutController::class,'about']);
 
-Route::get('/comment/{nama}/pesan/{pesan}', [CommentController::class.'comment']);
+Route::get('/comment/{nama}/{pesan}', [CommentController::class,'comment']);

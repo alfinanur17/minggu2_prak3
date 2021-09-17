@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home() {
-        return "Selamat Datang di Website Politenik Negeri Malang";
+        return view('home');
     }
 
 }
